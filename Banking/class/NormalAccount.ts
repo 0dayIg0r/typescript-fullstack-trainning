@@ -7,6 +7,7 @@ export class NormalAccount extends Account {
     super(name, accountNumber);
     this.doc_id = doc_id;
   }
+  
 
   getLoan = (): void => {
     console.log("Você pegou um empréstimo");

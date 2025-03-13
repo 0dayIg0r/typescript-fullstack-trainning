@@ -4,7 +4,8 @@ import { NormalAccount } from "./class/NormalAccount";
 
 
 const normalAccount = new NormalAccount(1, "IGOR", 2);
-normalAccount.getLoan()
+normalAccount.setName('NOVO NOME')
+console.log(normalAccount)
 
 
 
