@@ -1,17 +1,10 @@
-import { Account } from "./Account";
+import { NormalAccount } from "./NormalAccount";
 
-export class NormalAccount extends Account {
-  doc_id: number;
-
+export class RichAccout extends NormalAccount {
   constructor(doc_id: number, name: string, accountNumber: number) {
-    super(name, accountNumber);
+    super(doc_id, name, accountNumber);
     this.doc_id = doc_id;
   }
-  
-
-  getLoan = (): void => {
-    console.log("Você pegou um empréstimo");
-  };
 
   deposit = (amount: number) => {
     if (amount <= 0) {
@@ -19,9 +12,7 @@ export class NormalAccount extends Account {
     } else if (!this.isActive()) {
       throw new Error("A conta de deposito está desativada");
     }
-    this.balance += amount;
+    this.balance += amount +10;
     console.log(`Você despositou ${amount}. Saldo atual: ${this.balance}`);
   };
-
-  
 }
